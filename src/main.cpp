@@ -3,7 +3,6 @@
 #include <vector>
 
 int main() {
-  std::cout << "Bhjbzxjhvdsajgvdgasvjd" << std::endl;
   int sz = 100;
   std::vector<int> X(sz, 1);
   std::vector<int> Y(sz, 1);
@@ -15,4 +14,9 @@ int main() {
       Z[i] = X[i] + Y[i];
     }
   }
+  std::cout << "result: [";
+  for(auto val: Z) {
+    std::cout << val << " ";
+  }
+  std::cout << "]" << std::endl;
 }

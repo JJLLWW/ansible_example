@@ -4,5 +4,17 @@
   remote_user: hkfd52
 # what do we want to do?
   tasks:
-  - name: see if login was successful
-    shell: whoami
+  - name: hello world
+    shell: ls -la
+    register: ls_output
+  - name: hello world, get output
+    debug: var=ls_output
+  - name: move source to hamilton
+    ansible.builtin.copy:
+      src: src
+      dest: ~/
+  - name: build and run the code on hamilton
+    ansible.builtin.script: build_and_run.sh
+    register: script_output
+  - name: get the script's output
+    debug: var=script_output
