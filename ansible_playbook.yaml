@@ -1,0 +1,8 @@
+---
+# which machine(s) do we want to do stuff remotely on?
+- hosts: hamservers
+  remote_user: hkfd52
+# what do we want to do?
+  tasks:
+  - name: see if login was successful
+    shell: whoami
